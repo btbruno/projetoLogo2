@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
 }
 
 a{
@@ -111,6 +111,16 @@ section{
         align-items: center;
         background: #111;
         color: white;
+
+        .btn{
+            background: var(--primary-menu);
+       
+            &:hover{
+                opacity: 0.7;
+                transition: 0.5s;
+                
+            }
+        }
         
     }
 }
