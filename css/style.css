@@ -24,8 +24,9 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -44,6 +45,9 @@ li {
   opacity: 0.8;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  -webkit-box-shadow: 0 0 6px 2px #205aff;
+          box-shadow: 0 0 6px 2px #205aff;
+  background: blue;
 }
 
 header {
@@ -149,9 +153,29 @@ section:nth-child(odd) .btn:hover {
 }
 
 @media (max-width: 992px) {
+  section {
+    padding: 100px 50px 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  section img {
+    margin: 50px 0 0;
+    max-width: 100%;
+  }
   header ul {
     position: absolute;
-    top: 80px;
+    top: -100%;
     left: 0;
     width: 100%;
     height: calc(100vh - 80px);
@@ -165,6 +189,9 @@ section:nth-child(odd) .btn:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
   }
   header ul li a {
     margin: 5px 0;
@@ -200,6 +227,24 @@ section:nth-child(odd) .btn:hover {
     z-index: 1;
     -webkit-transition: 0.5s;
     transition: 0.5s;
+  }
+  .active ul {
+    top: 80px;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  .active .toggle::before {
+    top: 14px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-box-shadow: 0 0 0 #fff;
+            box-shadow: 0 0 0 #fff;
+  }
+  .active .toggle::after {
+    bottom: 14px;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
 }
 /*# sourceMappingURL=style.css.map */
